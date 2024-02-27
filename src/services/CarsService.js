@@ -11,6 +11,12 @@ class CarsService {
     AppState.cars = newCars
   }
 
+  async getCarById(carId) {
+    const response = await api.get(`api/cars/${carId}`)
+    logger.log('GOT CAR BY ID', response.data)
+    const newCar = new Car(response.data)
+    AppState.activeCar = newCar
+  }
 }
 
 export const carsService = new CarsService()

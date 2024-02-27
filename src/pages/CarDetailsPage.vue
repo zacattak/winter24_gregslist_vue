@@ -43,6 +43,7 @@ export default {
       // logger.log('Mounted car details page!');
       // logger.log('Route information', route)
       // logger.log('Id from route', route.params.carId)
+      carsService.clearAppState()
       getCarById()
     })
 

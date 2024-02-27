@@ -17,6 +17,10 @@ class CarsService {
     const newCar = new Car(response.data)
     AppState.activeCar = newCar
   }
+
+  clearAppState() {
+    AppState.activeCar = null
+  }
 }
 
 export const carsService = new CarsService()

@@ -25,13 +25,15 @@
 import { computed, onMounted } from 'vue';
 import Pop from '../utils/Pop.js';
 import { carsService } from '../services/CarsService.js';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { logger } from '../utils/Logger.js';
 import { AppState } from '../AppState.js'
 export default {
   setup() {
 
     const route = useRoute()
+
+    const router = useRouter()
 
     async function getCarById() {
       try {
@@ -67,6 +69,9 @@ export default {
           logger.log('deleting car', carId)
 
           await carsService.destroyCar(carId)
+
+          Pop.success('Car was deleted!')
+          router.push({ name: 'Cars' })
         } catch (error) {
           Pop.error(error)
         }

@@ -25,6 +25,7 @@ class CarsService {
   async destroyCar(carId) {
     const response = await api.delete(`api/cars/${carId}`)
     logger.log('DESTROYED CAR', response.data)
+    this.clearAppState()
   }
 
   async createCar(carData) {

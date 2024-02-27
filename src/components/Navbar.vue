@@ -22,7 +22,7 @@
           </router-link>
         </li>
         <li>
-          <RouterLink :to="{ name: 'Houses' }" class="btn selectable">
+          <RouterLink :to="{ name: 'Houses' }" class="btn text-success selectable">
             Houses
           </RouterLink>
         </li>

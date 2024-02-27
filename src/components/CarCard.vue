@@ -21,7 +21,7 @@ export default {
     return {
       // NOTE will only bring in first car
       // car: computed(() => AppState.cars[0])
-    }
+    };
   }
 }
 </script>

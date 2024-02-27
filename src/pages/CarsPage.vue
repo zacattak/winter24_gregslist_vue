@@ -10,9 +10,31 @@
 
 
 <script>
+import { onMounted } from 'vue';
+import Pop from '../utils/Pop.js';
+import { carsService } from '../services/CarsService.js'
+
 export default {
   setup() {
-    return {}
+
+    async function getCars() {
+      try {
+        await carsService.getCars()
+      } catch (error) {
+        Pop.error(error)
+      }
+    }
+
+
+    // NOTE when the page loads!
+    onMounted(() => {
+      console.log('Page is mounted!');
+      getCars()
+    })
+
+
+    return {
+    }
   }
 }
 </script>

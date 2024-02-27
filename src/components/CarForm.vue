@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="createCar()">
+  <form v-if="account.id" @submit.prevent="createCar()">
 
     <div class="mb-3">
       <label for="carMake">Make</label>
@@ -66,10 +66,11 @@
 
 
 <script>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { logger } from '../utils/Logger.js';
 import Pop from '../utils/Pop.js';
 import { carsService } from '../services/CarsService.js';
+import { AppState } from '../AppState.js';
 
 export default {
   setup() {
@@ -78,7 +79,7 @@ export default {
 
     return {
       editableCarData,
-
+      account: computed(() => AppState.account),
       async createCar() {
         try {
           logger.log('creating car', editableCarData.value)

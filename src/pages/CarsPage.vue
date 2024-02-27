@@ -5,15 +5,21 @@
         <h1 class="m-3">Cars</h1>
       </div>
     </section>
+
+    <section class="row">
+      <div class="col-12">
+        {{ cars }}
+      </div>
+    </section>
   </div>
 </template>
 
 
 <script>
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 import Pop from '../utils/Pop.js';
 import { carsService } from '../services/CarsService.js'
-
+import { AppState } from '../AppState.js'
 export default {
   setup() {
 
@@ -34,6 +40,7 @@ export default {
 
 
     return {
+      cars: computed(() => AppState.cars)
     }
   }
 }

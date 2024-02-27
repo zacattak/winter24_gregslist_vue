@@ -1,8 +1,8 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
     <section class="row">
-      <div class="col-12">
-        <h1 class="m-3">Welcome to Gregslist!</h1>
+      <div class="col-12 my-2">
+        <h1>Welcome to Gregslist!</h1>
       </div>
     </section>
   </div>

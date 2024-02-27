@@ -1,14 +1,14 @@
 <template>
-  <div class="container-fluid">
+  <div class="container">
     <section class="row">
-      <div class="col-12">
-        <h1 class="m-3">Cars</h1>
+      <div class="col-12 my-2">
+        <h1>Cars</h1>
       </div>
     </section>
 
     <section class="row">
-      <div class="col-12">
-        {{ cars }}
+      <div v-for="car in cars" :key="car.id" class="col-md-4">
+        {{ car.make }} {{ car.model }}
       </div>
     </section>
   </div>

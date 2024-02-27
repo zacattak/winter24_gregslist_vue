@@ -1,13 +1,13 @@
 <template>
-    <div class="container-fluid">
+    <div class="container">
         <section class="row">
-            <div>
+            <div class="col-12">
                 <h1>Houses</h1>
             </div>
         </section>
         <section class="row">
-            <div class="col-12">
-                {{ houses }}
+            <div v-for="house in houses" :key="house.id" class="col-md-4">
+                {{ house.description }} {{ house.price }}, {{ house.year }}
             </div>
 
         </section>

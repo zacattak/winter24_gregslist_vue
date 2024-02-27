@@ -4,6 +4,10 @@
       <div class="col-12 my-2">
         <h1>Cars</h1>
       </div>
+
+      <div class="col-12">
+        <CarForm />
+      </div>
     </section>
 
     <section class="row">
@@ -25,6 +29,7 @@ import Pop from '../utils/Pop.js';
 import { carsService } from '../services/CarsService.js'
 import { AppState } from '../AppState.js'
 import CarCard from '../components/CarCard.vue';
+import { logger } from '../utils/Logger.js';
 export default {
   setup() {
     async function getCars() {
@@ -37,11 +42,11 @@ export default {
     }
     // NOTE when the page loads!
     onMounted(() => {
-      console.log('Page is mounted!');
+      // console.log('Page is mounted!');
       getCars();
     });
     return {
-      cars: computed(() => AppState.cars)
+      cars: computed(() => AppState.cars),
     };
   },
   components: { CarCard }

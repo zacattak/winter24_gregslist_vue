@@ -26,6 +26,13 @@ class CarsService {
     const response = await api.delete(`api/cars/${carId}`)
     logger.log('DESTROYED CAR', response.data)
   }
+
+  async createCar(carData) {
+    const response = await api.post('api/cars', carData)
+    logger.log('CREATED CAR', response.data)
+    const newCar = new Car(response.data)
+    AppState.cars.push(newCar)
+  }
 }
 
 export const carsService = new CarsService()

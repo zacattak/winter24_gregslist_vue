@@ -13,7 +13,7 @@
         <p>{{ car.description }}</p>
         <p>Listed by {{ car.creator.name }}</p>
         <div>
-          <button @click="destroyCar()" class="btn btn-danger">Delete Car</button>
+          <button v-if="car.creatorId == account.id" @click="destroyCar()" class="btn btn-danger">Delete Car</button>
         </div>
       </div>
     </section>
@@ -52,6 +52,7 @@ export default {
 
     return {
       car: computed(() => AppState.activeCar),
+      account: computed(() => AppState.account),
 
       async destroyCar() {
         try {

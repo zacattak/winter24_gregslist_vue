@@ -21,6 +21,11 @@
             Cars
           </router-link>
         </li>
+        <li>
+          <RouterLink :to="{ name: 'Houses' }" class="btn selectable">
+            Houses
+          </RouterLink>
+        </li>
       </ul>
       <!-- LOGIN COMPONENT HERE -->
       <div>

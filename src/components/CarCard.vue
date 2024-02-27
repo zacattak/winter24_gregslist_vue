@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="{ name: 'CarDetails' }">
+  <router-link :to="{ name: 'CarDetails', params: { carId: carProp.id } }">
     <img :src="carProp.imgUrl" class="img-fluid" :alt="carProp.make + ' ' + carProp.model" role="button">
     <div class="car-title">
       <p class="fs-4 mb-1 ms-1">{{ carProp.make }} {{ carProp.model }}</p>

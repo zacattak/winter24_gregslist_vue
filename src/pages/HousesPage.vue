@@ -8,8 +8,10 @@
         <section class="row">
             <div v-for="house in houses" :key="house.id" class="col-md-4">
 
-                <img :src="house.imgUrl" class="img-fluid" :alt="house.description + house.price">
-                {{ house.description }} {{ house.price }}, {{ house.year }}
+                <img :src="house.imgUrl" class="img-fluid" :alt="house.levels">
+
+                <p> {{ house.description }} Price:{{ house.price }} Year:{{ house.year }} Levels:{{ house.levels }}
+                    Bedrooms:{{ house.bedrooms }} Bathrooms:{{ house.bathrooms }} </p>
 
             </div>
 

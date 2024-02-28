@@ -1,5 +1,5 @@
 export class Car {
-  constructor (data) {
+  constructor(data) {
     this.id = data.id || data._id
     this.creatorId = data.creatorId
     this.make = data.make
